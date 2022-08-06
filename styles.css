@@ -1,0 +1,130 @@
+@import url('https://fonts.google.com/specimen/Montserrat');
+@import url('https://fonts.google.com/specimen/Fraunces');
+
+:root{
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --dark-blue: hsl(212, 21%, 14%);
+    --grayish-blue: hsl(228, 12%, 48%);
+    --tw-space-y-reverse: 0;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--cream);
+    font-family: 'Fraunces', serif;    
+}
+
+.central__div{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__div{
+    display: flex;
+    border-radius: 12px;
+    width: 600px;
+    background-color: white
+}
+
+.main__left{
+    width: 950px;
+    height: 450px;
+    object-fit: cover;
+    background-image: url('./images/image-product-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+}
+
+.main__right{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem;
+}
+
+.main__right h1{
+    font-weight: 900;
+    line-height: 1.8rem;
+    padding-right: 24px;
+}
+
+.main__right p{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4rem;
+    letter-spacing: 0.7px;
+    font-size: 14px;
+    color: var(--grayish-blue);
+}
+
+.main__price{
+    display: flex;
+    align-items: center; 
+    margin: 10px 0px;
+    font-weight: bolder;
+    color: var(--grayish-blue);
+}
+
+.price{
+    font-size: 30px;
+    margin-right: 12px;
+    color: var(--dark-cyan);
+}
+
+.button__cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 1rem;
+    background-color: var(--dark-cyan);
+    border: none;
+    border-radius: 0.6rem;
+}
+
+.button__cart span{
+    margin-left: 0.6rem;
+    font-weight: 700;
+}
+.button__cart:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (max-width: 425px) {
+    body{
+        overflow-x: hidden;
+    }
+    .main__div{
+        flex-direction: column;
+        width: 340px;
+        height: 600px;
+    }
+    .main__left{
+        width: 340px;
+        height: 250px;
+        background-image: url('./images/image-product-mobile.jpg');
+    }
+    .main__right h1{
+        padding-right: 0px;
+    }
+    .main__right{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.8rem;
+    }
+    .main__right > * {
+        margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+}
